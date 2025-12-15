@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop bazar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Top Navbar */
+.top-navbar{
+    display:flex;
+    justify-content:flex-end;
+    gap:30px;
+    align-items:center;
+    padding:10px 20px;
+    background:rgb(43,0,128);
+    color:white;
+    font-size:14px;
+}
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 100px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:2000;
+}
+.logo img{
+    height:60px;
+    width:130px;
+    object-fit:cover;
+}
+.center-navbar{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+.center-navbar a{
+    text-decoration:none;
+    color:black;
+    font-weight:500;
+    padding:5px 10px;
+    transition:0.3s;
+}
+.center-navbar a:hover{
+    color:rgb(43,0,128);
+}
+.button button{
+    padding:20px;
+    color:white;
+    background:rgb(43,0,128);
+    border-radius:10px;
+    height:50px;
+    width:120px;
+    font-size:14px;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+.button button:hover{
+    background:rgb(60,0,180);
+}
+
+.hero {
+position: relative;
+width: 100%;
+height: 80vh;
+overflow: hidden;
+}
+
+.hero img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: brightness(50%); 
+}
+
+.hero h1, .hero p {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+color: white;
+text-align: center;
+font-family: Poppins, sans-serif;
+}
+
+.hero h1 {
+top: 35%;
+font-size: 48px;
+width: 90%;
+font-weight: 700;
+}
+
+.hero p {
+top: 50%;
+font-size: 20px;
+width: 70%;
+}
+/* this one is for our category section */
+.category-section {
+    width: 100%;
+    text-align: center;
+    padding: 60px 0;
+    background-color: #f4f7fc;
+    font-family: Poppins, sans-serif;
+}
+
+.category-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.category-section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    width: 180px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+.category-card h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+}
+/* this one is for featured laptops */
+/* Featured Laptops Section */
+.featured-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.featured-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.featured-section p.subtitle {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.featured-container {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+
+.featured-card {
+    width: 260px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    flex: 0 0 auto; /* Prevent wrapping */
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.featured-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.featured-card h3 {
+    font-size: 18px;
+    margin-top: 12px;
+    color: #222;
+    font-weight: 600;
+}
+
+.featured-card .price {
+    color: red;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.featured-card .details {
+    color: #666;
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.view-all-btn {
+    margin-top: 40px;
+    padding: 10px 22px; /* slightly smaller padding */
+    border-radius: 12px; /* rounded edges */
+    border: none;
+    background-color:rgb(43, 0, 128);
+    color: white;
+    font-size: 14px; /* smaller, more elegant font */
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* footer css */
+.footer {
+    background-color: rgb(43, 0, 128);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 20px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1 1 220px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-section p, 
+.footer-section li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
+}
+
+.social-icons a {
+    color: #f0f0f0;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="top-navbar">
+    <div class="contact-item">
+        <i class="ri-map-pin-line"></i>
+        <p>Gaidakot-4 Nawalpur, Nepal</p>
+    </div>
+    <div class="contact-item">
+        <i class="ri-phone-fill"></i>
+        <p>9850000000</p>
+    </div>
+    <div class="contact-item">
+        <i class="ri-mail-line"></i>
+        <p>laptopbazar98@gmail.com</p>
+    </div>
+</div>
+<div class="navbar">
+    <div class="logo">
+        <img src="./images of home/logo.png" alt="">
+    </div>
+    <div class="center-navbar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#">Products</a>
+        <a href="#">Blog</a>
+        <a href="#">Gallery</a>
+        <a href="#">Where To Buy Our Products</a>
+    </div>
+    <div class="button">
+        <button> Contact Us</button>
+    </div>
+</div>
+    <div class="hero">
+        <img src="./images of home/hero.jpg" alt="">
+        <h1>Your Trusted Marketplace for Laptops</h1>
+        <p>Upgrade, trade, or sell—smart choices for every budget and need.</p>
+    </div>
+    <section class="category-section">
+    <h2>Browse by Category</h2>
+    <p>Find the perfect laptop for your needs</p>
+
+    <div class="category-container">
+
+        <div class="category-card">
+            <img src="./images of home/Mac.jpg" alt="MacBook">
+            <h3>MacBook</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="./images of home/asus.jpeg" alt="Asus">
+            <h3>Asus</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="./images of home/acer.jpeg" alt="Acer">
+            <h3>Acer</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="./images of home/hp.jpg" alt="HP">
+            <h3>HP</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="./images of home/dell.jpg" alt="Dell">
+            <h3>Dell</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="./images of home/others.jpeg" alt="Other">
+            <h3>Others</h3>
+        </div>
+
+    </div>
+</section>
+<!-- Featured Laptops Section -->
+<section class="featured-section">
+    <h2>Featured Laptops</h2>
+    <p class="subtitle">Hand picked deals from trusted sellers</p>
+
+    <div class="featured-wrapper" style="display: flex; justify-content: center;">
+        <div class="featured-container">
+
+            <!-- Laptop 1 -->
+            <div class="featured-card">
+                <img src="./images of home/Mac.jpg" alt="MacBook">
+                <h3>MacBook Air M1 (2020)</h3>
+                <p class="price">Rs. 85,000</p>
+                <p class="details">256GB SSD • 8GB RAM</p>
+                <p class="details">Kathmandu</p>
+            </div>
+
+            <!-- Laptop 2 -->
+            <div class="featured-card">
+                <img src="./images of home/dell.jpg" alt="Dell">
+                <h3>Dell Inspiron 15</h3>
+                <p class="price">Rs. 55,000</p>
+                <p class="details">512GB SSD • 8GB RAM</p>
+                <p class="details">Bhaktapur</p>
+            </div>
+
+            <!-- Laptop 3 -->
+            <div class="featured-card">
+                <img src="./images of home/acer.jpeg" alt="Acer">
+                <h3>Acer Aspire 5</h3>
+                <p class="price">Rs. 48,000</p>
+                <p class="details">256GB SSD • 8GB RAM</p>
+                <p class="details">Lalitpur</p>
+            </div>
+
+            <!-- Laptop 4 -->
+            <div class="featured-card">
+                <img src="./images of home/hp.jpg" alt="HP">
+                <h3>HP Pavilion 14</h3>
+                <p class="price">Rs. 60,000</p>
+                <p class="details">512GB SSD • 16GB RAM</p>
+                <p class="details">Chitwan</p>
+            </div>
+
+        </div>
+    </div>
+
+    <button class="view-all-btn">View All Laptops</button>
+</section>
+
+<!-- footer section  -->
+ <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About / Logo -->
+        <div class="footer-section">
+            <img src="./images of home/logo.png" alt="Laptop Bazar Logo" class="footer-logo">
+            <p>Your trusted marketplace for laptops. Upgrade, trade, or sell—smart choices for every budget and need.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="ri-map-pin-line"></i> Gaidakot-4, Nawalpur, Nepal</p>
+            <p><i class="ri-phone-fill"></i> 9850000000</p>
+            <p><i class="ri-mail-line"></i> laptopbazar98@gmail.com</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Laptop Bazar. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
