@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Laptop Bazar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Top Navbar */
+.top-navbar{
+    display:flex;
+    justify-content:flex-end;
+    gap:30px;
+    align-items:center;
+    padding:10px 20px;
+    background:rgb(43,0,128);
+    color:white;
+    font-size:14px;
+}
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 100px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:2000;
+   
+}
+.logo img{
+    height:60px;
+    width:130px;
+    object-fit:cover;
+}
+.center-navbar{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+.center-navbar a{
+    text-decoration:none;
+    color:black;
+    font-weight:500;
+    padding:5px 10px;
+    transition:0.3s;
+}
+.center-navbar a:hover{
+    color:rgb(43,0,128);
+}
+.button button{
+    padding:20px;
+    color:white;
+    background:rgb(43,0,128);
+    border-radius:10px;
+    height:50px;
+    width:120px;
+    font-size:14px;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+.button button:hover{
+    background:rgb(60,0,180);
+}
+
+/* Hero Section */
+.hero{
+    position:relative;
+    width:100%;
+    height:50vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    background: url('./imagesofaboutus/hero.png') center/cover no-repeat;
+    color:white;
+}
+.hero h1{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+.hero p{
+    font-size:18px;
+    width:70%;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* Image + Text Section */
+.img-text-section{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:60px 20px;
+    flex-wrap:wrap;
+}
+.img-text-section img{
+    width:35%;
+    border-radius:12px;
+    
+}
+.img-text-section .text{
+    width:60%;
+}
+.img-text-section .text h2{
+    color:rgb(43,0,128);
+    font-size:32px;
+    margin-bottom:15px;
+}
+.img-text-section .text p{
+    font-size:16px;
+    color:#555;
+    line-height:1.6;
+}
+
+/* Alternating Sections */
+.alternate-section{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:60px 20px;
+    flex-wrap:wrap;
+}
+.alternate-section:nth-child(even) .text{
+    order:2;
+}
+.alternate-section img{
+    width:35%;
+    border-radius:12px;
+    
+}
+.alternate-section .text{
+    width:60%;
+}
+.alternate-section .text h2{
+    color:rgb(43,0,128);
+    font-size:32px;
+    margin-bottom:15px;
+}
+.alternate-section .text p{
+    font-size:16px;
+    color:#555;
+    line-height:1.6;
+}
+
+/* Stats Section */
+.stats-section{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    background:#f5f5f5;
+    padding:60px 20px;
+    flex-wrap:wrap;
+    text-align:center;
+}
+.stat-card{
+    flex:1 1 150px;
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.stat-card h3{
+    font-size:30px;
+    color:rgb(43,0,128);
+    margin-bottom:10px;
+}
+.stat-card p{
+    font-size:14px;
+    color:#555;
+}
+
+/* Customer Reviews */
+.reviews-section{
+    padding:60px 20px;
+}
+.reviews-section h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+.reviews-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.review-card{
+    flex:1 1 250px;
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    text-align:center;
+}
+.review-card img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    margin-bottom:10px;
+    
+}
+.review-card h3{
+    color:rgb(43,0,128);
+    margin-bottom:5px;
+    font-size:16px;
+}
+.review-card p{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+}
+.review-card .rating{
+    color:orange;
+    margin-top:8px;
+}
+
+/* Footer */
+.footer{
+    background-color: rgb(43,0,128);
+    color:white;
+    padding:50px 20px 20px 20px;
+}
+.footer-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+.footer-section{
+    flex:1 1 220px;
+}
+.footer-logo{
+    width:120px;
+    margin-bottom:15px;
+}
+.footer-section h3{
+    font-size:16px;
+    margin-bottom:15px;
+    font-weight:600;
+}
+.footer-section p, .footer-section li{
+    font-size:14px;
+    line-height:1.6;
+    color:#f0f0f0;
+}
+.footer-section ul{
+    list-style:none;
+    padding:0;
+}
+.footer-section ul li a{
+    text-decoration:none;
+    color:#f0f0f0;
+    transition:0.3s;
+}
+.footer-section ul li a:hover{
+    color:#ffcc00;
+}
+.social-icons a{
+    color:#f0f0f0;
+    font-size:18px;
+    margin-right:10px;
+    transition:0.3s;
+}
+.social-icons a:hover{
+    color:#ffcc00;
+}
+.footer-bottom{
+    text-align:center;
+    margin-top:20px;
+    border-top:1px solid rgba(255,255,255,0.2);
+    padding-top:15px;
+    font-size:14px;
+    color:#ccc;
+}
+
+.imagekhatra:hover{
+    transform: scale(0.9);
+}
+/* Responsive */
+@media(max-width:768px){
+    .img-text-section, .alternate-section{
+        flex-direction:column;
+    }
+    .img-text-section img, .alternate-section img, .img-text-section .text, .alternate-section .text{
+        width:100%;
+    }
+    .stats-section{
+        flex-direction:column;
+    }
+    .reviews-container{
+        flex-direction:column;
+        align-items:center;
+    }
+    .footer-container{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navbar -->
+<div class="top-navbar">
+    <div class="contact-item"><i class="ri-map-pin-line"></i><p>Gaidakot-4 Nawalpur, Nepal</p></div>
+    <div class="contact-item"><i class="ri-phone-fill"></i><p>9850000000</p></div>
+    <div class="contact-item"><i class="ri-mail-line"></i><p>laptopbazar98@gmail.com</p></div>
+</div>
+
+<!-- Main Navbar -->
+<div class="navbar">
+    <div class="logo"><img src="./images of home/logo.png" alt=""></div>
+    <div class="center-navbar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#">Products</a>
+        <a href="#">Blog</a>
+        <a href="#">Gallery</a>
+        <a href="#">Where To Buy Our Products</a>
+    </div>
+    <div class="button"><button>Contact Us</button></div>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+    
+    <p>We are dedicated to providing the best marketplace for buying and selling laptops in Nepal. 
+       Explore top deals, trusted sellers, and a wide variety of brands. Whether you are upgrading, 
+       selling, or finding your first laptop, we have you covered with a seamless experience.</p>
+</div>
+
+<marquee behavior="scroll" direction="left">Looking to upgrade your laptop or turn your old one into quick cash? At Laptop Bazar, we make buying and selling laptops effortless. Explore a wide range of powerful, high-quality laptops at unbeatable prices — or sell your old device within minutes with full transparency and fair valuation.
+</marquee>
+    
+
+<!-- who we are+ Text -->
+<section class="img-text-section">
+    <img src="./imagesofaboutus/ourmission.jpg" alt="Laptop Work" class="imagekhatra">
+    <div class="text">
+        <h2>Who We Are</h2>
+        <p>
+Laptop Bazar is Nepal’s most trusted online laptop marketplace, proudly connecting buyers and sellers from every corner of the country. 
+We are committed to transparency, fair pricing, and quick transactions, making it easier than ever to buy or sell laptops of any type. 
+From premium devices to budget-friendly options</p><br>
+
+<p>
+Every laptop listed on our platform goes through a careful verification process to guarantee quality and reliability. 
+
+</p>
+
+
+
+
+    </div>
+</section>
+
+<!-- Alternating Sections -->
+<section class="alternate-section">
+    <div class="text">
+        <h2>Our Mission</h2>
+        <p>
+Our mission is to build a seamless, secure, and user-centric marketplace where laptop buyers and sellers from all over Nepal can connect with confidence. 
+We are committed to creating an environment where students, professionals, gamers, freelancers, and tech enthusiasts can access the right device without confusion or risk. 
+</p>
+
+    </div>
+    <img src="./imagesofaboutus/ourmission.jpg" alt="Mission" class="imagekhatra">
+</section>
+
+<section class="alternate-section">
+    <img src="./imagesofaboutus/ourmission.jpg" alt="Vision" class="imagekhatra">
+    <div class="text">
+        <h2>Our Vision</h2>
+        <p>We envision becoming the leading platform for laptop trade in Nepal, ensuring the best deals, 
+           reliable sellers, and 100% customer satisfaction across every transaction.</p>
+    </div>
+</section>
+
+<section class="alternate-section">
+    <div class="text">
+        <h2>Our Story</h2>
+        <p>Founded in 2020, Laptop Bazar started as a small initiative to help people buy and sell laptops easily. 
+           Today, we have thousands of satisfied customers and continue to grow across Nepal.</p>
+    </div>
+    <img src="./imagesofaboutus/ourmission.jpg" alt="Our Story" class="imagekhatra">
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stat-card">
+        <h3>12,500+</h3>
+        <p>Laptops Sold</p>
+    </div>
+    <div class="stat-card">
+        <h3>600+</h3>
+        <p>Laptops In Store</p>
+    </div>
+    <div class="stat-card">
+        <h3>9,000+</h3>
+        <p>Satisfied Customers</p>
+    </div>
+    <div class="stat-card">
+        <h3>60+</h3>
+        <p>Trusted Sellers</p>
+    </div>
+</section>
+
+<!-- Customer Reviews -->
+<section class="reviews-section">
+    <h2>What Our Customers Say</h2>
+    <div class="reviews-container">
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer 1">
+            <h3>Sunita K.</h3>
+            <p>Excellent service and great deals. Highly recommend Laptop Bazar!</p>
+            <div class="rating">★★★★★</div>
+        </div>
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer 2">
+            <h3>Rajesh P.</h3>
+            <p>Very easy to buy and sell laptops. Trusted platform with fast responses.</p>
+            <div class="rating">★★★★☆</div>
+        </div>
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Customer 3">
+            <h3>Anjali S.</h3>
+            <p>Great experience! Found exactly what I was looking for. Amazing support team.</p>
+            <div class="rating">★★★★★</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <img src="./images of home/logo.png" class="footer-logo" alt="">
+            <p>Your trusted marketplace for laptops. Upgrade, trade, or sell—smart choices for every budget and need.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="ri-map-pin-line"></i> Gaidakot-4, Nawalpur, Nepal</p>
+            <p><i class="ri-phone-fill"></i> 9850000000</p>
+            <p><i class="ri-mail-line"></i> laptopbazar98@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Laptop Bazar. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
